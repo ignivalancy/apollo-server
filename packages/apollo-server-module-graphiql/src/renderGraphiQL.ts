@@ -47,7 +47,7 @@ export function renderGraphiQL(data: GraphiQLData): string {
   const endpointWs = endpointURL.startsWith('ws://') || endpointURL.startsWith('wss://');
   const subscriptionsEndpoint = data.subscriptionsEndpoint;
   const usingHttp = !endpointWs;
-  const usingWs = endpointWs || !!subscriptionsEndpoint;
+  const usingWs = endpointWs || subscriptionsEndpoint;
   const endpointURLWs = usingWs && (endpointWs ? endpointURL : subscriptionsEndpoint);
 
   const queryString = data.query;
